@@ -2,7 +2,7 @@ import { useCountries } from '../../hooks/useCountries.js';
 import Countries from '../Countries/Countries';
 
 export default function Main() {
-  const { filterCountries, type, setType } = useCountries();
+  const { countryFilter, type, setType } = useCountries();
   return (
     <div>
       <div>
@@ -23,6 +23,9 @@ export default function Main() {
           <option value="South America">South America</option>
         </select>
       </div>
+      {countryFilter().map((name) => (
+        <Countries key={name.id} {...name} />
+      ))}
     </div>
   );
 }
