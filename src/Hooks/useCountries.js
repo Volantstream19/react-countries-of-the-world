@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { getCountries } from '../services/country.js';
 
-export default function useCountries() {
+export function useCountries() {
   const [countries, setCountries] = useState([]);
-  const [type, setType] = useState([]);
+  const [type, setType] = useState(['all']);
 
   useEffect(() => {
     async function fetchData() {

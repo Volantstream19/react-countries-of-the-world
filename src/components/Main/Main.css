@@ -1,0 +1,18 @@
+.country-handler {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 25px;
+}
+
+.select {
+  display: flex;
+  position: absolute;
+  top: 5%;
+  left: 47.5%;
+}
