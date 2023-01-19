@@ -3,12 +3,17 @@ import { getCountries } from '../services/country.js';
 
 export function useCountries() {
   const [countries, setCountries] = useState([]);
-  const [type, setType] = useState(['all']);
+  const [type, setType] = useState(['Antartica']);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     async function fetchData() {
-      const data = await getCountries();
-      setCountries(data);
+      try {
+        const data = await getCountries();
+        setCountries(data);
+      } catch (e) {
+        setError(e.text);
+      }
     }
     fetchData();
   }, []);
@@ -17,5 +22,5 @@ export function useCountries() {
     if (type === 'all') return countries;
     return countries.filter((arr) => arr.continent === type);
   };
-  return { countryFilter, type, setType };
+  return { countryFilter, type, setType, error };
 }

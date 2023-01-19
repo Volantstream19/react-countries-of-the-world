@@ -1,11 +1,12 @@
 import { useCountries } from '../../hooks/useCountries.js';
 import Countries from '../Countries/Countries';
+import './Main.css';
 
 export default function Main() {
   const { countryFilter, type, setType } = useCountries();
   return (
-    <div>
-      <div>
+    <div className="country">
+      <div className="hello">
         <select
           className="select"
           value={type}
@@ -13,6 +14,7 @@ export default function Main() {
             setType(e.target.value);
           }}
         >
+          <option value="all">All</option>
           <option value="Antartica">Antartica</option>
           <option value="Africa">Africa</option>
           <option value="Asia">Asia</option>
