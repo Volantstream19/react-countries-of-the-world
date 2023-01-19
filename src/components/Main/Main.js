@@ -13,10 +13,9 @@ export default function Main() {
             setType(e.target.value);
           }}
         >
-          <option value="All">All</option>
+          <option value="Antartica">Antartica</option>
           <option value="Africa">Africa</option>
           <option value="Asia">Asia</option>
-          <option value="Antartica">Antartica</option>
           <option value="Australia">Australia</option>
           <option value="Europe">Europe</option>
           <option value="North America">North America</option>
